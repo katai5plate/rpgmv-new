@@ -1,0 +1,61 @@
+---
+attackMotions:
+- type: 0
+  weaponImageId: 0
+- type: 1
+  weaponImageId: 1
+- type: 1
+  weaponImageId: 2
+- type: 1
+  weaponImageId: 3
+- type: 1
+  weaponImageId: 4
+- type: 1
+  weaponImageId: 5
+- type: 1
+  weaponImageId: 6
+- type: 2
+  weaponImageId: 7
+- type: 2
+  weaponImageId: 8
+- type: 2
+  weaponImageId: 9
+- type: 0
+  weaponImageId: 10
+- type: 0
+  weaponImageId: 11
+- type: 0
+  weaponImageId: 12
+testBattlers:
+- actorId: 1
+  equips:
+  - 1
+  - 1
+  - 2
+  - 3
+  - 0
+  level: 1
+- actorId: 2
+  equips:
+  - 2
+  - 1
+  - 2
+  - 3
+  - 0
+  level: 1
+- actorId: 3
+  equips:
+  - 3
+  - 0
+  - 2
+  - 3
+  - 4
+  level: 1
+- actorId: 4
+  equips:
+  - 4
+  - 0
+  - 2
+  - 3
+  - 4
+  level: 1

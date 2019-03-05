@@ -1,0 +1,28 @@
+---
+magicSkills: []
+menuCommands:
+- false
+- false
+- false
+- false
+- false
+- true
+optDisplayTp: false
+optDrawTitle: true
+optExtraExp: false
+optFloorDeath: false
+optFollowers: false
+optSideView: false
+optSlipDeath: false
+optTransparent: false
+partyMembers: []
+startMapId: 1
+startX: 0
+startY: 0
+title1Name: ''
+title2Name: ''
+windowTone:
+- 0
+- 0
+- 0
+- 0
