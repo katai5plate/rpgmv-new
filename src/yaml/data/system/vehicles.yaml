@@ -1,31 +1,19 @@
 airship:
-  bgm:
-    name: ''
-    pan: 0
-    pitch: 100
-    volume: 90
+  bgm: {name: '', pan: 0, pitch: 100, volume: 90}
   characterIndex: 3
   characterName: ''
   startMapId: 0
   startX: 0
   startY: 0
 boat:
-  bgm:
-    name: ''
-    pan: 0
-    pitch: 100
-    volume: 90
+  bgm: {name: '', pan: 0, pitch: 100, volume: 90}
   characterIndex: 0
   characterName: ''
   startMapId: 0
   startX: 0
   startY: 0
 ship:
-  bgm:
-    name: ''
-    pan: 0
-    pitch: 100
-    volume: 90
+  bgm: {name: '', pan: 0, pitch: 100, volume: 90}
   characterIndex: 1
   characterName: ''
   startMapId: 0

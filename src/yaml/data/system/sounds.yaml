@@ -1,122 +1,35 @@
 battleBgm:
-  name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
+  {name: '',  pan: 0,  pitch: 100,  volume: 90}
 defeatMe:
-  name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
+  {name: '',  pan: 0,  pitch: 100,  volume: 90}
 gameoverMe:
-  name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
+  {name: '',  pan: 0,  pitch: 100,  volume: 90}
 sounds:
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
-- name: Item3
-  pan: 0
-  pitch: 100
-  volume: 90
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
+- {name: Item3,  pan: 0,  pitch: 100,  volume: 90}
 titleBgm:
-  name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
+  {name: '',  pan: 0,  pitch: 100,  volume: 90}
 victoryMe:
-  name: ''
-  pan: 0
-  pitch: 100
-  volume: 90
+  {name: '',  pan: 0,  pitch: 100,  volume: 90}

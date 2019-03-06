@@ -1,11 +1,5 @@
 magicSkills: []
-menuCommands:
-- false
-- false
-- false
-- false
-- false
-- true
+menuCommands: [false, false, false, false, false, true]
 optDisplayTp: false
 optDrawTitle: true
 optExtraExp: false
@@ -20,8 +14,4 @@ startX: 0
 startY: 0
 title1Name: ''
 title2Name: ''
-windowTone:
-- 0
-- 0
-- 0
-- 0
+windowTone: [0, 0, 0, 0]
