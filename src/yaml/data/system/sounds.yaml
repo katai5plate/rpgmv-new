@@ -5,30 +5,54 @@ defeatMe:
 gameoverMe:
   {name: '',  pan: 0,  pitch: 100,  volume: 90}
 sounds:
+# カーソル
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# 決定
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# キャンセル
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# ブザー
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# 装備
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# セーブ
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# ロード
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# 戦闘開始
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# 逃走
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# 敵攻撃
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# 敵ダメージ
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# 敵消滅
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# ボス消滅1
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# ボス消滅2
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# 味方ダメージ
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# 味方戦闘不能
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# 回復
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# ミス
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# 回避
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# 魔法回避
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# 魔法反射
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# ショップ
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
+# アイテム使用
 - {name: '',  pan: 0,  pitch: 100,  volume: 90}
-- {name: Item3,  pan: 0,  pitch: 100,  volume: 90}
+# スキル使用
+- {name: '',  pan: 0,  pitch: 100,  volume: 90}
 titleBgm:
   {name: '',  pan: 0,  pitch: 100,  volume: 90}
 victoryMe:

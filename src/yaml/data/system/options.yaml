@@ -1,17 +1,46 @@
+# SV魔法スキル
 magicSkills: []
-menuCommands: [false, false, false, false, false, true]
+
+# メニュー系
+menuCommands:
+# アイテム
+- false
+# スキル
+- false
+# 装備
+- false
+# ステータス
+- false
+# 並べ替え
+- false
+# セーブ
+- true
+
+# バトル画面でTPを表示
 optDisplayTp: false
-optDrawTitle: true
+# 控えメンバーも経験値を獲得
 optExtraExp: false
+# 床ダメージで戦闘不能
 optFloorDeath: false
+# パーティの隊列歩行
 optFollowers: false
+# サイドビュー戦闘を仕様
 optSideView: false
+# スリップダメージで戦闘不能
 optSlipDeath: false
+# 透明状態で開始
 optTransparent: false
+
+# 初期パーティ
 partyMembers: []
+# 初期位置
 startMapId: 1
 startX: 0
 startY: 0
+# タイトル画面
 title1Name: ''
 title2Name: ''
+# ゲームタイトルの描画
+optDrawTitle: true
+# ウィンドウカラー
 windowTone: [0, 0, 0, 0]
