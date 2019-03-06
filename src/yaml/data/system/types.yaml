@@ -1,10 +1,18 @@
-armorTypes:
-- ''
+# 属性タイプ
 elements:
 - ''
-equipTypes:
-- ''
+# スキルタイプ
 skillTypes:
 - ''
+# 武器タイプ
 weaponTypes:
+- ''
+# SV攻撃モーション
+attackMotions:
+- {type: 0, weaponImageId: 0}
+# 防具タイプ
+armorTypes:
+- ''
+# 装備タイプ
+equipTypes:
 - ''

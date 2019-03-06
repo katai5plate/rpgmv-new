@@ -1,103 +1,201 @@
+# 通貨単位
 currencyUnit: ''
 terms:
   basic:
+  # レベル
   - ''
+  # 上の略
   - ''
+  # HP
   - ''
+  # 上の略
   - ''
+  # MP
   - ''
+  # 上の略
   - ''
+  # TP
   - ''
+  # 上の略
   - ''
+  # EXP
   - ''
+  # 上の略
   - ''
   commands:
+  # 戦う
   - ''
+  # 逃げる
   - ''
+  # 攻撃
   - ''
+  # 防御
   - ''
+  # アイテム
   - Items
+  # スキル
   - ''
+  # 装備
   - ''
+  # ステータス
   - ''
+  # 並べ替え
   - ''
+  # セーブ
   - Save Game
+  # ゲーム終了
   - Quit Game
+  # オプション
   - Preferences
+  # 武器
   - ''
+  # 防具
   - ''
+  # 大事なもの
   - ''
+  # 装備
   - ''
+  # 最強装備
   - ''
+  # 全て外す
   - ''
+  # ニューゲーム
   - New Game
+  # コンティニュー
   - Load Game
+  # (NULL)
   - 
+  # タイトルへ
   - Back to Title
+  # やめる
   - Cancel
+  # (NULL)
   - 
+  # 購入する
   - ''
+  # 売却する
   - ''
   params:
+  # 最大HP
   - ''
+  # 最大MP
   - ''
+  # 攻撃力
   - ''
+  # 防御力
   - ''
+  # 魔法力
   - ''
+  # 魔法防御
   - ''
+  # 敏捷性
   - ''
+  # 運
   - ''
+  # 命中率
   - ''
+  # 回避率
   - ''
   messages:
+    # %1には効かなかった！
     actionFailure: "%1 <- TargetName"
+    # %1は %2 のダメージを受けた！
     actorDamage: "%1 <- TargetName / %2 <- Points"
+    # %1は%2を %3 奪われた！
     actorDrain: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    # %1の%2が %3 増えた！
     actorGain: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    # %1の%2が %3 減った！
     actorLoss: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    # %1はダメージを受けていない！
     actorNoDamage: "%1 <- TargetName"
+    # ミス！　%1はダメージを受けていない！
     actorNoHit: "%1 <- TargetName"
+    # %1の%2が %3 回復した！
     actorRecovery: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    # 常時ダッシュ
     alwaysDash: Always Running
+    # BGM 音量
     bgmVolume: BGM Volume
+    # BGS 音量
     bgsVolume: BGS Volume
+    # %1の%2が上がった！
     buffAdd: "%1 <- TargetName / %2 <- StatusName"
+    # %1の%2が元に戻った！
     buffRemove: "%1 <- TargetName / %2 <- StatusName"
+    # コマンド記憶
     commandRemember: Command Remember
+    # %1の反撃！
     counterAttack: "%1 <- TargetName"
+    # 痛恨の一撃！！
     criticalToActor: ''
+    # 会心の一撃！！
     criticalToEnemy: ''
+    # %1の%2が下がった！
     debuffAdd: "%1 <- TargetName / %2 <- StatusName"
+    # %1は戦いに敗れた。
     defeat: "%1 <- TargetName"
+    # %1が出現！
     emerge: "%1 <- TargetName"
+    # %1に %2 のダメージを与えた！
     enemyDamage: "%1 <- TargetName / %2 <- Points"
+    # %1の%2を %3 奪った！
     enemyDrain: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    # %1の%2が %3 増えた！
     enemyGain: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    # %1の%2が %3 減った！
     enemyLoss: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    # %1にダメージを与えられない！
     enemyNoDamage: "%1 <- TargetName"
+    # ミス！　%1にダメージを与えられない！
     enemyNoHit: "%1 <- TargetName"
+    # %1の%2が %3 回復した！
     enemyRecovery: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    # しかし逃げることはできなかった！
     escapeFailure: ''
+    # %1は逃げ出した！
     escapeStart: "%1 <- TargetName"
+    # %1は攻撃をかわした！
     evasion: "%1 <- TargetName"
+    # 次の%1まで
     expNext: "%1 <- LevelName"
+    # 現在の%1
     expTotal: "%1 <- ExpName"
+    # ファイルNo:
     file: ''
+    # %1は%2 %3 に上がった！
     levelUp: "%1 <- TargetName / %2 <- LevelName / %3 <- Points"
+    # どのファイルをロードしますか？
     loadMessage: Select LOAD destination
+    # %1は魔法を打ち消した！
     magicEvasion: "%1 <- TargetName"
+    # %1は魔法を跳ね返した！
     magicReflection: "%1 <- TargetName"
+    # ME 音量
     meVolume: ME Volume
+    # %1 の%2を獲得！
     obtainExp: "%1 <- Points / %2 <- ExpName"
+    # お金を %1\\G 手に入れた！
     obtainGold: "%1 <- Points / \\G <- GoldName"
+    # %1を手に入れた！
     obtainItem: "%1 <- ItemName"
+    # %1を覚えた！
     obtainSkill: "%1 <- SkillName"
+    # %1たちのパーティ
     partyName: "%1 <- HeroName"
+    # 持っている数
     possession: ''
+    # %1は先手を取った！
     preemptive: "%1 <- TargetName"
+    # どのファイルにセーブしますか？
     saveMessage: Select SAVE destination
+    # SE 音量
     seVolume: SE Volume
+    # %1が%2をかばった！
     substitute: "%1 to %2 <- TargetName"
+    # %1は不意をつかれた！
     surprise: "%1 <- TargetName"
+    # %1は%2を使った！
     useItem: "%1 <- TargetName / %2 <- SkillName"
+    # %1の勝利！
     victory: "%1 <- TargetName"
