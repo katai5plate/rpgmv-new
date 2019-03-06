@@ -31,6 +31,14 @@ gulp.task("yaml", () => {
     .pipe(gulp.dest('./temp/'));
 });
 
+gulp.task("mkdir", quit => {
+  const list = require(`${process.cwd()}/temp/structures/mkdir.json`)
+  list.map(dn => {
+    fs.mkdirpSync(`${process.cwd()}/dest/${dn}`)
+  })
+  quit();
+});
+
 gulp.task("makeSystem", () => {
   fs.writeJSONSync(`${process.cwd()}/temp/data/system/gameTitle.json`, { gameTitle: GAME_TITLE });
   return gulp.src(['temp/data/system/*.json'])
@@ -62,4 +70,12 @@ gulp.task("check", () => {
   console.log(args, GAME_TITLE)
 });
 
-gulp.task("default", gulp.series(["init", "jade", "yaml", "makeSystem", "makeTilesets", "makeOtherData"]))
+gulp.task("default", gulp.series([
+  "init",
+  "jade",
+  "yaml",
+  "mkdir",
+  "makeSystem",
+  "makeTilesets",
+  "makeOtherData"
+]))
