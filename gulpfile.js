@@ -8,29 +8,36 @@ const rename = require("gulp-rename");
 const fs = require("fs-extra");
 const args = require("minimist")(process.argv.slice(2));
 
-const DEFAULT_DIR = `${process.cwd()}/dest`;
-
-const GAME_TITLE = args.n || args.name || "new";
-const VERSION = args.v || args.version || "1.6.2";
-const DEST_DIR = args.o || args.output || DEFAULT_DIR;
+const GAME_TITLE = args.n || args.name || "rpgmv-new";
+const VERSION = args.e || args.edition || "1.6.2";
+const DEFAULT_DIR = `${process.cwd()}/dest/${GAME_TITLE}`;
+let DEST_DIR_PARENT = args.o || args.output || DEFAULT_DIR;
+let DEST_DIR = DEST_DIR_PARENT;
 
 gulp.task("init", quit => {
-  if (DEST_DIR !== DEFAULT_DIR) {
+  if (DEST_DIR_PARENT !== DEFAULT_DIR) {
+    DEST_DIR = `${DEST_DIR_PARENT}/${GAME_TITLE}`
     try {
       const safety = fs.existsSync(DEST_DIR);
       if (safety) {
         console.error([
           "",
           "指定されたディレクトリは存在するため、作業を開始できません。",
+          "指定のパスで続行する場合、ディレクトリを移動するか、削除してください。",
+          "",
+          "The specified directory exists, so you can not start work.",
+          "If you continue, please move or delete specified directory.",
+          "",
           `DEST_DIR: ${DEST_DIR}`,
           "",
         ].join("\n"));
         process.exit(1)
       }
     } catch (e) { }
+  } else {
+    fs.removeSync(`${process.cwd()}/dest`);
   }
   fs.removeSync(`${process.cwd()}/temp`);
-  fs.removeSync(`${process.cwd()}/dest`);
   quit();
 });
 
@@ -53,7 +60,7 @@ gulp.task("mkdir", quit => {
 gulp.task("copyResources", quit => {
   const list = require(`${process.cwd()}/temp/structures/resources.json`)
   list.map(dn => {
-    fs.copySync(`${process.cwd()}/src/resources/${dn}`, `${DEST_DIR}/${dn}`)
+    fs.copySync(`${process.cwd()}/resources/${dn}`, `${DEST_DIR}/${dn}`)
   })
   quit();
 });
@@ -63,7 +70,7 @@ gulp.task("makeSystem", () => {
   return gulp.src(['temp/data/system/*.json'])
     .pipe(merge())
     .pipe(rename({ basename: "System" }))
-    .pipe(gulp.dest('./dest/data'));
+    .pipe(gulp.dest(`${DEST_DIR}/data`));
 });
 
 gulp.task("copyData", quit => {
@@ -91,7 +98,7 @@ gulp.task("makeIndex", () => {
   return gulp.src(['src/pug/index.jade'])
     .pipe(header(`- var GAME_TITLE = "${GAME_TITLE}";\n`))
     .pipe(jade({ pretty: true }))
-    .pipe(gulp.dest('./dest/'));
+    .pipe(gulp.dest(`${DEST_DIR}/`));
 });
 
 gulp.task("makeDevData", quit => {

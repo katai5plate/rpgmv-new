@@ -66,16 +66,16 @@ temp/
 dest/
 
 # Resources
-src/resources/fonts/
-src/resources/icon/
-src/resources/img/
-src/resources/js/main.js
-src/resources/js/rpg_core.js
-src/resources/js/rpg_managers.js
-src/resources/js/rpg_objects.js
-src/resources/js/rpg_scenes.js
-src/resources/js/rpg_sprites.js
-src/resources/js/rpg_windows.js
-src/resources/js/libs
-src/resources/js/plugins/Community_Basic.js
-src/resources/js/plugins/MadeWithMv.js
+resources/fonts/
+resources/icon/
+resources/img/
+resources/js/main.js
+resources/js/rpg_core.js
+resources/js/rpg_managers.js
+resources/js/rpg_objects.js
+resources/js/rpg_scenes.js
+resources/js/rpg_sprites.js
+resources/js/rpg_windows.js
+resources/js/libs
+resources/js/plugins/Community_Basic.js
+resources/js/plugins/MadeWithMv.js

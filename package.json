@@ -14,5 +14,8 @@
     "gulp-rename": "^1.4.0",
     "gulp-yaml": "^2.0.3",
     "minimist": "^1.2.0"
+  },
+  "scripts": {
+    "start": "gulp"
   }
 }
