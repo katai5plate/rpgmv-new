@@ -8,13 +8,29 @@ const rename = require("gulp-rename");
 const fs = require("fs-extra");
 const args = require("minimist")(process.argv.slice(2));
 
+const DEFAULT_DIR = `${process.cwd()}/dest`;
+
 const GAME_TITLE = args.n || args.name || "new";
 const VERSION = args.v || args.version || "1.6.2";
-const DEST_DIR = args.o || args.output || `${process.cwd()}/dest`;
+const DEST_DIR = args.o || args.output || DEFAULT_DIR;
 
 gulp.task("init", quit => {
+  if (DEST_DIR !== DEFAULT_DIR) {
+    try {
+      const safety = fs.existsSync(DEST_DIR);
+      if (safety) {
+        console.error([
+          "",
+          "指定されたディレクトリは存在するため、作業を開始できません。",
+          `DEST_DIR: ${DEST_DIR}`,
+          "",
+        ].join("\n"));
+        process.exit(1)
+      }
+    } catch (e) { }
+  }
   fs.removeSync(`${process.cwd()}/temp`);
-  fs.removeSync(`${process.cwd()}/dest`); // TODO: デフォルト以外でディレクトリが存在したら -f しない限り中断する
+  fs.removeSync(`${process.cwd()}/dest`);
   quit();
 });
 
@@ -23,13 +39,6 @@ gulp.task("yaml", () => {
     'src/yaml/**/*.yaml',
   ])
     .pipe(yaml())
-    .pipe(gulp.dest('./temp/'));
-});
-
-gulp.task("jade", () => {
-  return gulp.src(['src/pug/index.jade'])
-    .pipe(header(`- var GAME_TITLE = "${GAME_TITLE}";\n`))
-    .pipe(jade({ pretty: true }))
     .pipe(gulp.dest('./temp/'));
 });
 
@@ -42,11 +51,10 @@ gulp.task("mkdir", quit => {
 });
 
 gulp.task("copyResources", quit => {
-  fs.copySync(`${process.cwd()}/src/resources/fonts/*.*`, `${DEST_DIR}/*.*`)
-  fs.copySync(`${process.cwd()}/src/resources/icon/*.*`, `${DEST_DIR}/*.*`)
-  fs.copySync(`${process.cwd()}/src/resources/js/*.*`, `${DEST_DIR}/*.*`)
-  fs.copySync(`${process.cwd()}/src/temp/structures/package.json`, `${DEST_DIR}/package.json`)
-  fs.outputFileSync(`${DEST_DIR}/Game.rpgproject`, `RPGMV ${VERSION}`)
+  const list = require(`${process.cwd()}/temp/structures/resources.json`)
+  list.map(dn => {
+    fs.copySync(`${process.cwd()}/src/resources/${dn}`, `${DEST_DIR}/${dn}`)
+  })
   quit();
 });
 
@@ -58,15 +66,17 @@ gulp.task("makeSystem", () => {
     .pipe(gulp.dest('./dest/data'));
 });
 
-gulp.task("makeTilesets", quit => {
-  fs.copySync(
-    `${process.cwd()}/temp/data/others/tilesets.json`,
-    `${DEST_DIR}/data/Tilesets.json`
-  )
+gulp.task("copyData", quit => {
+  fs.readdirSync(`${process.cwd()}/temp/data/copy`).map(fn => {
+    fs.copySync(
+      `${process.cwd()}/temp/data/copy/${fn}`,
+      `${DEST_DIR}/data/${fn}`
+    )
+  })
   quit();
 });
 
-gulp.task("makeOtherData", quit => {
+gulp.task("makeEmptyData", quit => {
   const list = require(`${process.cwd()}/temp/structures/nilDataFiles.json`)
   list.map(fn => {
     fs.copySync(
@@ -77,10 +87,26 @@ gulp.task("makeOtherData", quit => {
   quit();
 });
 
-gulp.task("makePluginsJs", quit => {
-  fs.outputFileSync(`${DEST_DIR}/js/plugins.js`, `var $plugins = \n${
-    JSON.stringify(require(`${process.cwd()}/temp/structures/plugins.json`))
-  };\n`)
+gulp.task("makeIndex", () => {
+  return gulp.src(['src/pug/index.jade'])
+    .pipe(header(`- var GAME_TITLE = "${GAME_TITLE}";\n`))
+    .pipe(jade({ pretty: true }))
+    .pipe(gulp.dest('./dest/'));
+});
+
+gulp.task("makeDevData", quit => {
+  // plugins.js
+  const plugins = JSON
+    .stringify(require(`${process.cwd()}/temp/structures/plugins.json`))
+    .replace(/\A\[(.*?)\]\Z/m, "$1")
+  fs.outputFileSync(
+    `${DEST_DIR}/js/plugins.js`,
+    `var $plugins = \n[\n${plugins}\n];\n`
+  )
+  // package.json
+  fs.copySync(`${process.cwd()}/temp/structures/package.json`, `${DEST_DIR}/package.json`)
+  // Game.rpgproject
+  fs.outputFileSync(`${DEST_DIR}/Game.rpgproject`, `RPGMV ${VERSION}`)
   quit();
 });
 
@@ -91,11 +117,11 @@ gulp.task("check", () => {
 gulp.task("default", gulp.series([
   "init",
   "yaml",
-  "jade",
   "mkdir",
   "copyResources",
   "makeSystem",
-  "makeTilesets",
-  "makeOtherData",
-  "makePluginsJs",
+  "copyData",
+  "makeEmptyData",
+  "makeIndex",
+  "makeDevData",
 ]))
