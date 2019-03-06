@@ -19,9 +19,7 @@ gulp.task("init", quit => {
 gulp.task("jade", () => {
   return gulp.src(['src/pug/index.jade'])
     .pipe(header(`- var GAME_TITLE = "${GAME_TITLE}";\n`))
-    .pipe(jade({
-      pretty: true
-    }))
+    .pipe(jade({ pretty: true }))
     .pipe(gulp.dest('./temp/'));
 });
 
@@ -42,10 +40,21 @@ gulp.task("makeSystem", () => {
 });
 
 gulp.task("makeTilesets", quit => {
-  fs.moveSync(
+  fs.copySync(
     `${process.cwd()}/temp/data/others/tilesets.json`,
     `${process.cwd()}/dest/data/Tilesets.json`
   )
+  quit();
+});
+
+gulp.task("makeOtherData", quit => {
+  const list = require(`${process.cwd()}/temp/structures/nilDataFiles.json`)
+  list.map(fn => {
+    fs.copySync(
+      `${process.cwd()}/temp/data/others/nil.json`,
+      `${process.cwd()}/dest/data/${fn}.json`
+    )
+  })
   quit();
 });
 
@@ -53,4 +62,4 @@ gulp.task("check", () => {
   console.log(args, GAME_TITLE)
 });
 
-gulp.task("default", gulp.series(["init", "jade", "yaml", "makeSystem", "makeTilesets"]))
+gulp.task("default", gulp.series(["init", "jade", "yaml", "makeSystem", "makeTilesets", "makeOtherData"]))
