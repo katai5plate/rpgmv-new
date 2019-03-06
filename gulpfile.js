@@ -14,7 +14,7 @@ const DEST_DIR = args.o || args.output || `${process.cwd()}/dest`;
 
 gulp.task("init", quit => {
   fs.removeSync(`${process.cwd()}/temp`);
-  fs.removeSync(`${process.cwd()}/dest`);
+  fs.removeSync(`${process.cwd()}/dest`); // TODO: デフォルト以外でディレクトリが存在したら -f しない限り中断する
   quit();
 });
 
