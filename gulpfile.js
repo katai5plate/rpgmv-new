@@ -94,7 +94,7 @@ gulp.task("makeEmptyData", quit => {
 });
 
 gulp.task("makeIndex", () => {
-  return gulp.src(['src/pug/index.jade'])
+  return gulp.src(['src/jade/index.jade'])
     .pipe(header(`- var GAME_TITLE = "${GAME_TITLE}";\n`))
     .pipe(jade({ pretty: true }))
     .pipe(gulp.dest(`${DEST_DIR}/`));
