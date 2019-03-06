@@ -58,8 +58,10 @@ yarn start --name "Eternal Force Blizzard" --edition 1.5.1 --output C:\MyGames\
 ### Windowsで起動用バッチファイルの作成例
 ```bat
 @echo off
+set DIST_DIR="C:\Users\katai\Documents\Games"
+:retry
 set /p GAME_TITLE="ゲームタイトル: "
-set DIST_DIR="C:\MyGames"
+if x%GAME_TITLE%==x goto retry
 gulp -n "%GAME_TITLE%" -o "%DIST_DIR%" || explorer "%DIST_DIR%"
 explorer "%DIST_DIR%\%GAME_TITLE%"
 ```
