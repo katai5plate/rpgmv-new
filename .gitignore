@@ -59,3 +59,23 @@ typings/
 
 # next.js build output
 .next
+
+# Dev
+ex/
+temp/
+dest/
+
+# Resources
+resources/fonts/
+resources/icon/
+resources/img/
+resources/js/main.js
+resources/js/rpg_core.js
+resources/js/rpg_managers.js
+resources/js/rpg_objects.js
+resources/js/rpg_scenes.js
+resources/js/rpg_sprites.js
+resources/js/rpg_windows.js
+resources/js/libs
+resources/js/plugins/Community_Basic.js
+resources/js/plugins/MadeWithMv.js

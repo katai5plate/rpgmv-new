@@ -1,0 +1,103 @@
+currencyUnit: ''
+terms:
+  basic:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  commands:
+  - ''
+  - ''
+  - ''
+  - ''
+  - Items
+  - ''
+  - ''
+  - ''
+  - ''
+  - Save Game
+  - Quit Game
+  - Preferences
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - New Game
+  - Load Game
+  - 
+  - Back to Title
+  - Cancel
+  - 
+  - ''
+  - ''
+  params:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  messages:
+    actionFailure: "%1 <- TargetName"
+    actorDamage: "%1 <- TargetName / %2 <- Points"
+    actorDrain: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    actorGain: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    actorLoss: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    actorNoDamage: "%1 <- TargetName"
+    actorNoHit: "%1 <- TargetName"
+    actorRecovery: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    alwaysDash: Always Running
+    bgmVolume: BGM Volume
+    bgsVolume: BGS Volume
+    buffAdd: "%1 <- TargetName / %2 <- StatusName"
+    buffRemove: "%1 <- TargetName / %2 <- StatusName"
+    commandRemember: Command Remember
+    counterAttack: "%1 <- TargetName"
+    criticalToActor: ''
+    criticalToEnemy: ''
+    debuffAdd: "%1 <- TargetName / %2 <- StatusName"
+    defeat: "%1 <- TargetName"
+    emerge: "%1 <- TargetName"
+    enemyDamage: "%1 <- TargetName / %2 <- Points"
+    enemyDrain: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    enemyGain: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    enemyLoss: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    enemyNoDamage: "%1 <- TargetName"
+    enemyNoHit: "%1 <- TargetName"
+    enemyRecovery: "%1 <- TargetName / %2 <- StatusName / %3 <- Points"
+    escapeFailure: ''
+    escapeStart: "%1 <- TargetName"
+    evasion: "%1 <- TargetName"
+    expNext: "%1 <- LevelName"
+    expTotal: "%1 <- ExpName"
+    file: ''
+    levelUp: "%1 <- TargetName / %2 <- LevelName / %3 <- Points"
+    loadMessage: Select LOAD destination
+    magicEvasion: "%1 <- TargetName"
+    magicReflection: "%1 <- TargetName"
+    meVolume: ME Volume
+    obtainExp: "%1 <- Points / %2 <- ExpName"
+    obtainGold: "%1 <- Points / \\G <- GoldName"
+    obtainItem: "%1 <- ItemName"
+    obtainSkill: "%1 <- SkillName"
+    partyName: "%1 <- HeroName"
+    possession: ''
+    preemptive: "%1 <- TargetName"
+    saveMessage: Select SAVE destination
+    seVolume: SE Volume
+    substitute: "%1 to %2 <- TargetName"
+    surprise: "%1 <- TargetName"
+    useItem: "%1 <- TargetName / %2 <- SkillName"
+    victory: "%1 <- TargetName"
