@@ -56,6 +56,7 @@ yarn start --name "Eternal Force Blizzard" --edition 1.5.1 --output C:\MyGames\
 7. makeIndex: jadeファイル を HTML に変換し配置
 8. makeDevData: `plugins.js`, `package.json`, `Game.rpgproject` を作成
 ### Windowsで起動用バッチファイルの作成例
+- `run.bat`
 ```bat
 @echo off
 set DIST_DIR="C:\Users\katai\Documents\Games"
