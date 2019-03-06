@@ -55,3 +55,11 @@ yarn start --name "Eternal Force Blizzard" --edition 1.5.1 --output C:\MyGames\
 6. makeEmptyData: 値が `[null]` になる JSON をコピー
 7. makeIndex: jadeファイル を HTML に変換し配置
 8. makeDevData: `plugins.js`, `package.json`, `Game.rpgproject` を作成
+### Windowsで起動用バッチファイルの作成例
+```bat
+@echo off
+set /p GAME_TITLE="ゲームタイトル: "
+set DIST_DIR="C:\MyGames"
+gulp -n "%GAME_TITLE%" -o "%DIST_DIR%" || explorer "%DIST_DIR%"
+explorer "%DIST_DIR%\%GAME_TITLE%"
+```
