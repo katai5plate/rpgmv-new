@@ -63,6 +63,7 @@ set DIST_DIR="C:\Users\%USERNAME%\Documents\Games"
 :retry
 set /p GAME_TITLE="ゲームタイトル: "
 if x%GAME_TITLE%==x goto retry
-gulp -n "%GAME_TITLE%" -o "%DIST_DIR%" || explorer "%DIST_DIR%"
-explorer "%DIST_DIR%\%GAME_TITLE%"
+gulp -n "%GAME_TITLE%" -o "%DIST_DIR%" & (
+  pause & explorer "%DIST_DIR%\%GAME_TITLE%"
+)
 ```
