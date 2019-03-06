@@ -59,6 +59,7 @@ yarn start --name "Eternal Force Blizzard" --edition 1.5.1 --output C:\MyGames\
 - `run.bat`
 ```bat
 @echo off
+setlocal
 set DIST_DIR="C:\Users\%USERNAME%\Documents\Games"
 :retry
 set /p GAME_TITLE="ゲームタイトル: "
@@ -66,4 +67,5 @@ if x%GAME_TITLE%==x goto retry
 gulp -n "%GAME_TITLE%" -o "%DIST_DIR%" & (
   pause & explorer "%DIST_DIR%\%GAME_TITLE%"
 )
+endlocal
 ```
