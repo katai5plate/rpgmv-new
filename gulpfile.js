@@ -58,8 +58,7 @@ gulp.task("mkdir", quit => {
 });
 
 gulp.task("copyResources", quit => {
-  const list = require(`${process.cwd()}/temp/structures/resources.json`)
-  list.map(dn => {
+  fs.readdirSync(`${process.cwd()}/resources`).map(dn => {
     fs.copySync(`${process.cwd()}/resources/${dn}`, `${DEST_DIR}/${dn}`)
   })
   quit();
