@@ -103,12 +103,11 @@ gulp.task("makeIndex", () => {
 
 gulp.task("makeDevData", quit => {
   // plugins.js
-  const plugins = JSON
-    .stringify(require(`${process.cwd()}/temp/structures/plugins.json`))
-    .replace(/\A\[(.*?)\]\Z/m, "$1")
+  const plugins = require(`${process.cwd()}/temp/structures/plugins.json`);
+  const pluginsJson = JSON.stringify(plugins, null, "  ")
   fs.outputFileSync(
     `${DEST_DIR}/js/plugins.js`,
-    `var $plugins = \n[\n${plugins}\n];\n`
+    `var $plugins = \n${pluginsJson};\n`
   )
   // package.json
   fs.copySync(`${process.cwd()}/temp/structures/package.json`, `${DEST_DIR}/package.json`)
