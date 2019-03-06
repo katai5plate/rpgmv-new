@@ -10,6 +10,7 @@ const args = require("minimist")(process.argv.slice(2));
 
 const GAME_TITLE = args.n || args.name || "new";
 const VERSION = args.v || args.version || "1.6.2";
+const DEST_DIR = args.o || args.output || `${process.cwd()}/dest`;
 
 gulp.task("init", quit => {
   fs.removeSync(`${process.cwd()}/temp`);
@@ -35,17 +36,17 @@ gulp.task("jade", () => {
 gulp.task("mkdir", quit => {
   const list = require(`${process.cwd()}/temp/structures/mkdir.json`)
   list.map(dn => {
-    fs.mkdirpSync(`${process.cwd()}/dest/${dn}`)
+    fs.mkdirpSync(`${DEST_DIR}/${dn}`)
   })
   quit();
 });
 
 gulp.task("copyResources", quit => {
-  fs.copySync(`${process.cwd()}/src/resources/fonts/*.*`, `${process.cwd()}/dest/*.*`)
-  fs.copySync(`${process.cwd()}/src/resources/icon/*.*`, `${process.cwd()}/dest/*.*`)
-  fs.copySync(`${process.cwd()}/src/resources/js/*.*`, `${process.cwd()}/dest/*.*`)
-  fs.copySync(`${process.cwd()}/src/temp/structures/package.json`, `${process.cwd()}/dest/package.json`)
-  fs.writeFileSync(`${process.cwd()}/dest/Game.rpgproject`)
+  fs.copySync(`${process.cwd()}/src/resources/fonts/*.*`, `${DEST_DIR}/*.*`)
+  fs.copySync(`${process.cwd()}/src/resources/icon/*.*`, `${DEST_DIR}/*.*`)
+  fs.copySync(`${process.cwd()}/src/resources/js/*.*`, `${DEST_DIR}/*.*`)
+  fs.copySync(`${process.cwd()}/src/temp/structures/package.json`, `${DEST_DIR}/package.json`)
+  fs.writeFileSync(`${DEST_DIR}/Game.rpgproject`, `RPGMV ${VERSION}`)
   quit();
 });
 
@@ -60,7 +61,7 @@ gulp.task("makeSystem", () => {
 gulp.task("makeTilesets", quit => {
   fs.copySync(
     `${process.cwd()}/temp/data/others/tilesets.json`,
-    `${process.cwd()}/dest/data/Tilesets.json`
+    `${DEST_DIR}/data/Tilesets.json`
   )
   quit();
 });
@@ -70,7 +71,7 @@ gulp.task("makeOtherData", quit => {
   list.map(fn => {
     fs.copySync(
       `${process.cwd()}/temp/data/others/nil.json`,
-      `${process.cwd()}/dest/data/${fn}.json`
+      `${DEST_DIR}/data/${fn}.json`
     )
   })
   quit();
