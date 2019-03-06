@@ -59,7 +59,7 @@ yarn start --name "Eternal Force Blizzard" --edition 1.5.1 --output C:\MyGames\
 - `run.bat`
 ```bat
 @echo off
-set DIST_DIR="C:\Users\katai\Documents\Games"
+set DIST_DIR="C:\Users\%USERNAME%\Documents\Games"
 :retry
 set /p GAME_TITLE="ゲームタイトル: "
 if x%GAME_TITLE%==x goto retry
