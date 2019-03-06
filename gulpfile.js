@@ -9,18 +9,12 @@ const fs = require("fs-extra");
 const args = require("minimist")(process.argv.slice(2));
 
 const GAME_TITLE = args.n || args.name || "new";
+const VERSION = args.v || args.version || "1.6.2";
 
 gulp.task("init", quit => {
   fs.removeSync(`${process.cwd()}/temp`);
   fs.removeSync(`${process.cwd()}/dest`);
   quit();
-});
-
-gulp.task("jade", () => {
-  return gulp.src(['src/pug/index.jade'])
-    .pipe(header(`- var GAME_TITLE = "${GAME_TITLE}";\n`))
-    .pipe(jade({ pretty: true }))
-    .pipe(gulp.dest('./temp/'));
 });
 
 gulp.task("yaml", () => {
@@ -31,11 +25,27 @@ gulp.task("yaml", () => {
     .pipe(gulp.dest('./temp/'));
 });
 
+gulp.task("jade", () => {
+  return gulp.src(['src/pug/index.jade'])
+    .pipe(header(`- var GAME_TITLE = "${GAME_TITLE}";\n`))
+    .pipe(jade({ pretty: true }))
+    .pipe(gulp.dest('./temp/'));
+});
+
 gulp.task("mkdir", quit => {
   const list = require(`${process.cwd()}/temp/structures/mkdir.json`)
   list.map(dn => {
     fs.mkdirpSync(`${process.cwd()}/dest/${dn}`)
   })
+  quit();
+});
+
+gulp.task("copyResources", quit => {
+  fs.copySync(`${process.cwd()}/src/resources/fonts/*.*`, `${process.cwd()}/dest/*.*`)
+  fs.copySync(`${process.cwd()}/src/resources/icon/*.*`, `${process.cwd()}/dest/*.*`)
+  fs.copySync(`${process.cwd()}/src/resources/js/*.*`, `${process.cwd()}/dest/*.*`)
+  fs.copySync(`${process.cwd()}/src/temp/structures/package.json`, `${process.cwd()}/dest/package.json`)
+  fs.writeFileSync(`${process.cwd()}/dest/Game.rpgproject`)
   quit();
 });
 
@@ -72,9 +82,10 @@ gulp.task("check", () => {
 
 gulp.task("default", gulp.series([
   "init",
-  "jade",
   "yaml",
+  "jade",
   "mkdir",
+  "copyResources",
   "makeSystem",
   "makeTilesets",
   "makeOtherData"
