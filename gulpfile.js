@@ -46,7 +46,7 @@ gulp.task("copyResources", quit => {
   fs.copySync(`${process.cwd()}/src/resources/icon/*.*`, `${DEST_DIR}/*.*`)
   fs.copySync(`${process.cwd()}/src/resources/js/*.*`, `${DEST_DIR}/*.*`)
   fs.copySync(`${process.cwd()}/src/temp/structures/package.json`, `${DEST_DIR}/package.json`)
-  fs.writeFileSync(`${DEST_DIR}/Game.rpgproject`, `RPGMV ${VERSION}`)
+  fs.outputFileSync(`${DEST_DIR}/Game.rpgproject`, `RPGMV ${VERSION}`)
   quit();
 });
 
@@ -77,6 +77,13 @@ gulp.task("makeOtherData", quit => {
   quit();
 });
 
+gulp.task("makePluginsJs", quit => {
+  fs.outputFileSync(`${DEST_DIR}/js/plugins.js`, `var $plugins = \n${
+    JSON.stringify(require(`${process.cwd()}/temp/structures/plugins.json`))
+  };\n`)
+  quit();
+});
+
 gulp.task("check", () => {
   console.log(args, GAME_TITLE)
 });
@@ -89,5 +96,6 @@ gulp.task("default", gulp.series([
   "copyResources",
   "makeSystem",
   "makeTilesets",
-  "makeOtherData"
+  "makeOtherData",
+  "makePluginsJs",
 ]))
