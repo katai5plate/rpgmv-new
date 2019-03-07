@@ -1,24 +1,33 @@
 # 小型船
 boat:
+  # BGM
   bgm: {name: '', pan: 0, pitch: 100, volume: 90}
+  # キャラチップ
   characterIndex: 0
   characterName: ''
+  # 初期位置
   startMapId: 0
   startX: 0
   startY: 0
 # 大型船
 ship:
+  # BGM
   bgm: {name: '', pan: 0, pitch: 100, volume: 90}
-  characterIndex: 1
+  # キャラチップ
+  characterIndex: 0
   characterName: ''
+  # 初期位置
   startMapId: 0
   startX: 0
   startY: 0
 # 飛行船
 airship:
+  # BGM
   bgm: {name: '', pan: 0, pitch: 100, volume: 90}
-  characterIndex: 3
+  # キャラチップ
+  characterIndex: 0
   characterName: ''
+  # 初期位置
   startMapId: 0
   startX: 0
   startY: 0
