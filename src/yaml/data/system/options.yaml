@@ -1,5 +1,16 @@
-# SV魔法スキル
-magicSkills: []
+# 初期パーティ
+partyMembers: []
+# 初期位置
+startMapId: 1
+startX: 0
+startY: 0
+# タイトル画面
+title1Name: ''
+title2Name: ''
+# ゲームタイトルの描画
+optDrawTitle: true
+# ウィンドウカラー
+windowTone: [0, 0, 0, 0]
 
 # メニュー系
 menuCommands:
@@ -31,16 +42,5 @@ optSlipDeath: false
 # 透明状態で開始
 optTransparent: false
 
-# 初期パーティ
-partyMembers: []
-# 初期位置
-startMapId: 1
-startX: 0
-startY: 0
-# タイトル画面
-title1Name: ''
-title2Name: ''
-# ゲームタイトルの描画
-optDrawTitle: true
-# ウィンドウカラー
-windowTone: [0, 0, 0, 0]
+# SV魔法スキル
+magicSkills: []
