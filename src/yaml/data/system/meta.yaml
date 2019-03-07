@@ -1,3 +1,6 @@
+# 編集中のマップID
 editMapId: 0
+# ja_JP / en_US
 locale: ja_JP
+# 更新チェック用乱数
 versionId: 0
