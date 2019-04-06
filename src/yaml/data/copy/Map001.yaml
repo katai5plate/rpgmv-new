@@ -1,24 +1,42 @@
+# 表示名
+displayName: ''
+# タイルセットID
+tilesetId: 1
+# 広さ
+width: 1
+height: 1
+# スクロールタイプ
+scrollType: 0
+# ダッシュ禁止
+disableDashing: false
+# メモ
+note: ''
+
+# BGM
 autoplayBgm: false
+bgm: {name: '', pan: 0, pitch: 100, volume: 90}
+# BGS
 autoplayBgs: false
+bgs: {name: '', pan: 0, pitch: 100, volume: 90}
+
+# 遠景
+parallaxShow: true
+parallaxName: ''
+# 遠景ループ
+parallaxLoopX: false
+parallaxSx: 0
+parallaxLoopY: false
+parallaxSy: 0
+
+# エンカウント
+encounterStep: 1
+encounterList: []
+# 戦闘背景
+specifyBattleback: false
 battleback1Name: ''
 battleback2Name: ''
-bgm: {name: '', pan: 0, pitch: 100, volume: 90}
-bgs: {name: '', pan: 0, pitch: 100, volume: 90}
-disableDashing: false
-displayName: ''
-encounterList: []
-encounterStep: 1
-height: 1
-note: ''
-parallaxLoopX: false
-parallaxLoopY: false
-parallaxName: ''
-parallaxShow: true
-parallaxSx: 0
-parallaxSy: 0
-scrollType: 0
-specifyBattleback: false
-tilesetId: 1
-width: 1
+
+# マップデータ
 data: [0, 0, 0, 0, 0, 0]
+# イベントデータ
 events: []
